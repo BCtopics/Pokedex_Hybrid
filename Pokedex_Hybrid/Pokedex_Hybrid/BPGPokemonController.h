@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class BPGPokemon;
+
 @interface BPGPokemonController : NSObject
+
++ (void)fetchPokemonForSearchTerm:(NSString *)searchTerm
+                       completion: (void (^_Nullable)(BPGPokemon * _Nullable))completion;
 
 @end

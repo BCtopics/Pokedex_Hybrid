@@ -8,25 +8,17 @@
 
 import Foundation
 
-class NetworkController {
+class NetworkController : NSObject {
     
-    enum HTTPMethod: String {
-        case get = "GET"
-        case put = "PUT"
-        case post = "POST"
-        case patch = "PATCH"
-        case delete = "DELETE"
-    }
-    
-    static func performRequest(for url: URL,
-                               httpMethod: HTTPMethod,
+    @objc static func performRequest(for url: URL,
+                               httpMethod: String,
                                urlParameters: [String: String]? = nil,
                                body: Data? = nil,
                                completion: ((Data?, Error?) -> Void)? = nil) {
         
         let requestURL = self.url(byAdding: urlParameters, to: url)
         var request = URLRequest(url: requestURL)
-        request.httpMethod = httpMethod.rawValue
+        request.httpMethod = httpMethod
         request.httpBody = body
         
         let dataTask = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
