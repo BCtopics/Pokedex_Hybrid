@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhy-HJ-1Fk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Pokemon Search View Controller-->
+        <scene sceneID="1eA-HP-nbR">
+            <objects>
+                <viewController id="xhy-HJ-1Fk" customClass="PokemonSearchViewController" customModule="Pokedex_Hybrid" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yWe-a8-ghS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yzv-rk-hCB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="upo-JK-hF9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-Jl-7c1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xhy-HJ-1Fk" id="Utj-cR-jVN"/>
+                                </connections>
+                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gt1-Lx-Ryc">
+                                <rect key="frame" x="15" y="293" width="345" height="81.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1r-TN-225">
+                                        <rect key="frame" x="151.5" y="0.0" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-wV-ecJ">
+                                        <rect key="frame" x="151.5" y="30.5" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htH-EK-b1n">
+                                        <rect key="frame" x="151.5" y="61" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xn2-Jl-7c1" firstAttribute="leading" secondItem="upo-JK-hF9" secondAttribute="leading" id="L0H-M3-QYM"/>
+                            <constraint firstItem="Gt1-Lx-Ryc" firstAttribute="centerX" secondItem="upo-JK-hF9" secondAttribute="centerX" id="Qqc-bF-w0l"/>
+                            <constraint firstItem="Xn2-Jl-7c1" firstAttribute="top" secondItem="yWe-a8-ghS" secondAttribute="bottom" id="Thi-tV-ic2"/>
+                            <constraint firstAttribute="trailing" secondItem="Gt1-Lx-Ryc" secondAttribute="trailing" constant="15" id="aVo-Wg-vpM"/>
+                            <constraint firstItem="Gt1-Lx-Ryc" firstAttribute="centerY" secondItem="upo-JK-hF9" secondAttribute="centerY" id="g6q-tL-frh"/>
+                            <constraint firstItem="Gt1-Lx-Ryc" firstAttribute="leading" secondItem="upo-JK-hF9" secondAttribute="leading" constant="15" id="nB5-xg-f4H"/>
+                            <constraint firstAttribute="trailing" secondItem="Xn2-Jl-7c1" secondAttribute="trailing" id="ww4-ug-8AS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="htH-EK-b1n" id="AfQ-qj-Ixe"/>
+                        <outlet property="idLabel" destination="0qx-wV-ecJ" id="Um6-O7-6xK"/>
+                        <outlet property="nameLabel" destination="n1r-TN-225" id="Qxj-iJ-P0Z"/>
+                        <outlet property="searchBar" destination="Xn2-Jl-7c1" id="Njz-tt-JNh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGx-zK-KLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="92"/>
+        </scene>
+    </scenes>
 </document>
